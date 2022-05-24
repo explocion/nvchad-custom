@@ -14,7 +14,7 @@ local sources = {
    b.formatting.shfmt,
    b.diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
 
-   b.formatting.clang_format,
+   b.formatting.clang_format.with { extra_filetypes = { "cuda" } },
    b.formatting.autopep8,
    b.formatting.rustfmt,
 }
