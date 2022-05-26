@@ -4,33 +4,24 @@ local M = {}
 
 M.setup_lsp = function(attach, capabilities)
    local lspconfig = require "lspconfig"
-   local detail_config = "lspconfig.server_configurations."
+   -- some modifications to default config
    capabilities.offsetEncoding = { "utf-16" }
-   local default_config = {
-      on_attach = attach,
-      capabilities = capabilities,
+   table.insert(require("lspconfig.server_configurations.clangd").default_config.filetypes, "cuda")
+   local servers = {
+      "html",
+      "cssls",
+      "tsserver",
+      "sumneko_lua",
+      "pyright",
+      "rust_analyzer",
+      "clangd",
    }
 
-   local servers = {
-      html = default_config,
-      cssls = default_config,
-      tsserver = default_config,
-      sumneko_lua = default_config,
-      pyright = default_config,
-      rust_analyzer = default_config,
-      clangd = {
+   for _, lsp in ipairs(servers) do
+      lspconfig[lsp].setup {
          on_attach = attach,
          capabilities = capabilities,
-         filetypes = vim.tbl_deep_extend(
-            "keep",
-            { "cuda" },
-            require(detail_config .. "clangd").default_config.filetypes
-         ),
-      },
-   }
-
-   for lsp, config in pairs(servers) do
-      lspconfig[lsp].setup(config)
+      }
    end
 end
 
