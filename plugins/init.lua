@@ -1,5 +1,9 @@
 return {
-   ["lambdalisue/suda.vim"] = {},
+   ["lambdalisue/suda.vim"] = {
+      config = function()
+         vim.g.suda_smart_edit = 0
+      end,
+   },
    ["jose-elias-alvarez/null-ls.nvim"] = {
       after = "nvim-lspconfig",
       config = function()
