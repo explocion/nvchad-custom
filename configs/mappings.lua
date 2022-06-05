@@ -1,9 +1,15 @@
 local M = {}
 
+M.disabled = {
+   i = {
+      ["<CR>"] = "",
+   },
+}
+
 M.telescope = {
    n = {
-      ["<leader>f"] = { "<cmd> :Telescope <CR>", "Open Telesope", opts = {} },
-      ["<leader>mf"] = { "<cmd> :Telescope media_files <CR>", "Open Telescope (Media Files)", opts = {} },
+      ["<leader>ff"] = { "<cmd> :Telescope <CR>", "Open Telesope", opts = {} },
+      ["<leader>fmf"] = { "<cmd> :Telescope media_files <CR>", "Open Telescope (Media Files)", opts = {} },
    },
 }
 

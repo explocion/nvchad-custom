@@ -20,6 +20,17 @@ M.plugins = {
          setup_lspconf = "custom.configs.lspconfig",
       },
    },
+   override = {
+      ["hrsh7th/nvim-cmp"] = {
+         mapping = {
+            ["<C-CR>"] = cmp.mapping.confirm {
+               behavior = cmp.ConfirmBehavior.Insert,
+               select = true,
+            },
+            ["<CR>"] = cmp.mapping.close(),
+         },
+      },
+   },
 }
 
 M.mappings = require "custom.configs.mappings"
