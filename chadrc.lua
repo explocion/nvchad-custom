@@ -22,4 +22,6 @@ M.plugins = {
    },
 }
 
+M.mappings = require "custom.configs.mappings"
+
 return M
