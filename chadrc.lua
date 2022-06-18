@@ -9,43 +9,16 @@ M.ui = {
    theme = "catppuccin",
 }
 
-local userPlugins = require "custom.plugins"
-
 M.plugins = {
-   user = userPlugins,
+   user = require "custom.plugins.extra",
    options = {
       lspconfig = {
-         setup_lspconf = "custom.configs.lspconfig",
+         setup_lspconf = "custom.lsp.lspconfig",
       },
    },
-   override = {
-      ["nvim-treesitter/nvim-treesitter"] = {
-         ensure_installed = {
-            "lua",
-            "python",
-            "bash",
-            "c",
-            "cpp",
-            "cuda",
-            "toml",
-            "yaml",
-            "rust",
-            "latex",
-            "markdown",
-         },
-      },
-      -- ["hrsh7th/nvim-cmp"] = {
-      --    mapping = {
-      --       ["<C-CR>"] = require("cmp-nvim-lsp").mapping.confirm {
-      --          behavior = cmp.ConfirmBehavior.Insert,
-      --          select = true,
-      --       },
-      --       ["<CR>"] = cmp.mapping.close(),
-      --    },
-      -- },
-   },
+   override = require "custom.plugins.override",
 }
 
-M.mappings = require "custom.configs.mappings"
+M.mappings = require "custom.mappings"
 
 return M
