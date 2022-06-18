@@ -9,8 +9,6 @@ M.ui = {
    theme = "catppuccin",
 }
 
-local cmp = require "cmp"
-
 local userPlugins = require "custom.plugins"
 
 M.plugins = {
@@ -21,15 +19,30 @@ M.plugins = {
       },
    },
    override = {
-      ["hrsh7th/nvim-cmp"] = {
-         mapping = {
-            ["<C-CR>"] = cmp.mapping.confirm {
-               behavior = cmp.ConfirmBehavior.Insert,
-               select = true,
-            },
-            ["<CR>"] = cmp.mapping.close(),
+      ["nvim-treesitter/nvim-treesitter"] = {
+         ensure_installed = {
+            "lua",
+            "python",
+            "bash",
+            "c",
+            "cpp",
+            "cuda",
+            "toml",
+            "yaml",
+            "rust",
+            "latex",
+            "markdown",
          },
       },
+      -- ["hrsh7th/nvim-cmp"] = {
+      --    mapping = {
+      --       ["<C-CR>"] = require("cmp-nvim-lsp").mapping.confirm {
+      --          behavior = cmp.ConfirmBehavior.Insert,
+      --          select = true,
+      --       },
+      --       ["<CR>"] = cmp.mapping.close(),
+      --    },
+      -- },
    },
 }
 

@@ -4,9 +4,10 @@ local M = {}
 
 M.setup_lsp = function(attach, capabilities)
    local lspconfig = require "lspconfig"
+
    -- some modifications to default config
-   capabilities.offsetEncoding = { "utf-16" }
    table.insert(require("lspconfig.server_configurations.clangd").default_config.filetypes, "cuda")
+
    local servers = {
       "html",
       "cssls",
@@ -15,6 +16,8 @@ M.setup_lsp = function(attach, capabilities)
       "pyright",
       "rust_analyzer",
       "clangd",
+      "taplo",
+      "texlab",
    }
 
    for _, lsp in ipairs(servers) do
