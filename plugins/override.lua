@@ -16,10 +16,9 @@ M["nvim-treesitter/nvim-treesitter"] = {
    },
 }
 
--- local present, cmp = pcall(require, "cmp")
---
--- if present then
---    M["hrsh7th/nvim-cmp"] = {
+-- M["hrsh7th/nvim-cmp"] = function()
+--    local cmp = require "cmp"
+--    return {
 --       mapping = {
 --          ["<C-CR>"] = cmp.mapping.confirm {
 --             behavior = cmp.ConfirmBehavior.Insert,

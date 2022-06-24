@@ -6,6 +6,7 @@ M.setup_lsp = function(attach, capabilities)
    local lspconfig = require "lspconfig"
 
    -- some modifications to default config
+   capabilities.offsetEncoding = { "utf-16" }
    table.insert(require("lspconfig.server_configurations.clangd").default_config.filetypes, "cuda")
 
    local servers = {
@@ -18,6 +19,7 @@ M.setup_lsp = function(attach, capabilities)
       "clangd",
       "taplo",
       "texlab",
+      "svlangserver",
    }
 
    for _, lsp in ipairs(servers) do
