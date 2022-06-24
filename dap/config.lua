@@ -59,7 +59,7 @@ end
 local function config_debuggers()
    require "custom.dap.lldb"
    -- load from json file
-   require("dap.ext.vscode").load_launchjs(nil, { cppdbg = { "cpp" } })
+   require("dap.ext.vscode").load_launchjs(nil, { cppdbg = { "cpp" }, codelldb = { "c", "cpp", "rust", "cuda" } })
 end
 
 function M.setup()
