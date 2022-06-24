@@ -7,6 +7,7 @@ local M = {}
 
 M.ui = {
    theme = "catppuccin",
+   tabufline_enabled = false,
 }
 
 M.plugins = {

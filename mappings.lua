@@ -24,12 +24,12 @@ M.suda = {
 M.dap = {
    n = {
       ["<F5>"] = { "<cmd> :DapContinue <CR>", "Debugger Continue", opts = {} },
-      ["<leader>c"] = { "<cmd> :DapContinue <CR>", "Debugger Continue", opts = {} },
-      ["<leader>si"] = { "<cmd> :DapStepInto <CR>", "Debugger Step Into", opts = {} },
-      ["<leader>s"] = { "<cmd> :DapStepOver <CR>", "Debugger Step Over", opts = {} },
-      ["<leader>so"] = { "<cmd> :DapStepOut <CR>", "Debugger Step Out", opts = {} },
+      ["<leader>gc"] = { "<cmd> :DapContinue <CR>", "Debugger Continue", opts = {} },
+      ["<leader>gi"] = { "<cmd> :DapStepInto <CR>", "Debugger Step Into", opts = {} },
+      ["<leader>gs"] = { "<cmd> :DapStepOver <CR>", "Debugger Step Over", opts = {} },
+      ["<leader>go"] = { "<cmd> :DapStepOut <CR>", "Debugger Step Out", opts = {} },
       ["<leader>bp"] = { "<cmd> :DapToggleBreakpoint <CR>", "Debugger Step Out", opts = {} },
-      ["<leader>t"] = { "<cmd> :DapTerminate <CR>", "Debugger Terminate", opts = {} },
+      ["<leader>ge"] = { "<cmd> :DapTerminate <CR>", "Debugger Terminate", opts = {} },
    },
 }
 

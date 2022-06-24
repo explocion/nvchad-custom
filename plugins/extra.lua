@@ -17,12 +17,6 @@ return {
       end,
       event = { "WinNew", "WinLeave" },
    },
-   ["akinsho/bufferline.nvim"] = {
-      config = function()
-         require("bufferline").setup()
-      end,
-      event = { "BufAdd" },
-   },
    ["jose-elias-alvarez/null-ls.nvim"] = {
       after = { "nvim-lspconfig" },
       config = function()
