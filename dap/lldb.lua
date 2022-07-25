@@ -55,3 +55,6 @@ dap.adapters.codelldb = function(on_adapter)
       on_adapter(adapter)
    end, 500)
 end
+
+dap.adapters.cppdbg = dap.adapters.codelldb
+dap.adapters["cortex-debug"] = dap.adapters.codelldb

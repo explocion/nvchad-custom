@@ -6,17 +6,12 @@ local M = {}
 -- example of changing theme:
 
 M.ui = {
-   theme = "catppuccin",
+  theme = "catppuccin",
 }
 
 M.plugins = {
-   user = require "custom.plugins.extra",
-   options = {
-      lspconfig = {
-         setup_lspconf = "custom.lsp.lspconfig",
-      },
-   },
-   override = require "custom.plugins.override",
+  user = require "custom.plugins.config",
+  override = require "custom.plugins.override",
 }
 
 M.mappings = require "custom.mappings"

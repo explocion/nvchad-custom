@@ -1,32 +1,16 @@
-local M = {}
+local toolkit = require "custom.toolkit"
 
-M["nvim-treesitter/nvim-treesitter"] = {
-   ensure_installed = {
-      "lua",
-      "python",
-      "bash",
-      "c",
-      "cpp",
-      "cuda",
-      "toml",
-      "yaml",
-      "rust",
-      "latex",
-      "markdown",
-   },
+return {
+  ["nvim-treesitter/nvim-treesitter"] = {
+    ensure_installed = toolkit.parsers,
+  },
+  ["williamboman/mason"] = {
+    ensure_installed = toolkit.mason,
+  },
+  ["NvChad/ui"] = {
+    tabufline = {
+      enabled = true,
+      lazyload = false,
+    },
+  },
 }
-
--- M["hrsh7th/nvim-cmp"] = function()
---    local cmp = require "cmp"
---    return {
---       mapping = {
---          ["<C-CR>"] = cmp.mapping.confirm {
---             behavior = cmp.ConfirmBehavior.Insert,
---             select = true,
---          },
---          ["<CR>"] = cmp.mapping.close(),
---       },
---    }
--- end
-
-return M
